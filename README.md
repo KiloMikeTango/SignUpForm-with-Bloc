@@ -1,3 +1,3 @@
 # signup_bloc
 
-A new Flutter project.
+SignUp Validation with Bloc and Streams.
