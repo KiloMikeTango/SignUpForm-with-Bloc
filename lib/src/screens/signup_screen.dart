@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import '../blocs/bloc.dart';
 
 class SignUpScreen extends StatelessWidget {
-  const SignUpScreen({super.key});
+  SignUpScreen({super.key});
 
   @override
+ 
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(35),
@@ -18,11 +20,16 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 
+  Bloc bloc = Bloc();
   Widget emailField() {
     return TextField(
+      onChanged: (value) {
+        bloc.updateEmail(value);
+      },
       keyboardType: TextInputType.emailAddress,
       decoration: InputDecoration(
         hintText: 'youremail@example.com',
+        hintStyle: TextStyle(color: Colors.grey),
         labelText: 'Email Address',
       ),
     );
@@ -30,7 +37,11 @@ class SignUpScreen extends StatelessWidget {
 
   Widget passwordField() {
     return TextField(
-      decoration: InputDecoration(labelText: 'Password', hintText: 'Password'),
+      decoration: InputDecoration(
+        labelText: 'Password',
+        hintText: 'Password',
+        hintStyle: TextStyle(color: Colors.grey),
+      ),
     );
   }
 
@@ -39,6 +50,7 @@ class SignUpScreen extends StatelessWidget {
       onPressed: () {},
       style: ElevatedButton.styleFrom(
         padding: EdgeInsets.symmetric(horizontal: 90),
+        elevation: 1.5,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadiusGeometry.circular(7.5),
         ),
