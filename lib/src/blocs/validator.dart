@@ -8,7 +8,7 @@ mixin Validator {
       } else {
         sink.addError('Enter valid email');
       }
-    },
+    }, 
   );
 
   final validatePassword = StreamTransformer<String, String>.fromHandlers(
