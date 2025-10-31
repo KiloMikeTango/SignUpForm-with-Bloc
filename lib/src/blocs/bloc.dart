@@ -20,4 +20,4 @@ class Bloc with Validator {
   }
 }
 
-final Bloc bloc = Bloc();
+
